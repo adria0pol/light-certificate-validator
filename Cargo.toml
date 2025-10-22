@@ -1,0 +1,30 @@
+[package]
+name = "light-certificate-validator"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+unified-bridge = "0.11.0"
+
+agglayer-types = { git = "https://github.com/agglayer/agglayer.git", tag = "v0.4.0-rc.21"}
+agglayer-grpc-client-040rc21 = { git = "https://github.com/agglayer/agglayer.git", tag = "v0.4.0-rc.21", package="agglayer-grpc-client" }
+agglayer-grpc-types-040rc21 = { git = "https://github.com/agglayer/agglayer.git", tag = "v0.4.0-rc.21", package="agglayer-grpc-types" }
+
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+eyre = "0.6.12"
+tokio-util = "0.7.16"
+hex = "0.4.3"
+dotenv = "0.15.0"
+url = "2.5.7"
+log = "0.4.28"
+env_logger = "0.11.8"
+thiserror = "2.0.17"
+tonic = { version="0.14.2" }
+prost = "0.14.1"
+tonic-prost = "0.14.1"
+alloy = { version = "0.14.0" , features = ["full"] }
+agglayer-tries = "0.11.0"
+
+[build-dependencies]
+tonic-prost-build = "0.14.2"
