@@ -3,3 +3,4 @@ version: v2
 deps:
   - buf.build/agglayer/interop
   - buf.build/agglayer/agglayer
+  - buf.build/google/protobuf

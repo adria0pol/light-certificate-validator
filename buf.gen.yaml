@@ -1,0 +1,30 @@
+version: v2
+
+managed:
+  enabled: true
+
+plugins:
+  - local: protoc-gen-prost
+    out: src/stub
+    opt:
+      - bytes=.
+      - file_descriptor_set
+      - compile_well_known_types
+      - extern_path=.agglayer.node=agglayer_grpc_types_040rc21::node
+      - extern_path=.agglayer.interop=agglayer_grpc_types_040rc21::interop
+      - extern_path=.agglayer.storage=agglayer_grpc_types_040rc21::storage
+
+  - local: protoc-gen-prost-serde
+    out: src/stub
+
+  - local: protoc-gen-prost-crate
+    out: src/stub
+    strategy: all
+    opt:
+      - no_features
+
+  - local: protoc-gen-tonic
+    out: src/stub
+    opt:
+      - no_client
+      - no_include

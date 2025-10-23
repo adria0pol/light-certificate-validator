@@ -1,7 +1,7 @@
 use std::process::Command;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    std::fs::remove_dir_all("target/buf-exports")?;
+    let _ = std::fs::remove_dir_all("target/buf-exports");
 
     // Execute buf export at the beginning
     let output = Command::new("buf")
